@@ -1,0 +1,10 @@
+{
+  "type": "record",
+  "name": "Transaction",
+  "namespace": "App\\Kafka",
+  "fields": [
+    {"name": "id", "type": "string"},
+    {"name": "amount", "type": "double"},
+    {"name": "created_at", "type": "string"}
+  ]
+}

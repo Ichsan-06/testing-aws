@@ -1,0 +1,17 @@
+{
+  "type": "record",
+  "name": "TransactionRecord",
+  "namespace": "com.example.kafka",
+  "fields": [
+    { "name": "referenceTransaction", "type": "string" },
+    { "name": "userClaim", "type": ["null", "string"], "default": null },
+    { "name": "timestampStart", "type": "string" },
+    { "name": "timestampStop", "type": ["null", "string"], "default": null },
+    { "name": "status", "type": "string" },
+    { "name": "amount", "type": "string" },
+    { "name": "type", "type": "string" },
+    { "name": "sla", "type": "string" },
+    { "name": "openBranch", "type": "string" },
+    { "name": "cutOffTime", "type": ["null", "string"], "default": null }
+  ]
+}

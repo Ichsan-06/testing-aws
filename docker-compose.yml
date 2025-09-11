@@ -1,5 +1,4 @@
-version: '3.8'
-
+version: "3.8"
 services:
   app:
     build: .
@@ -19,22 +18,24 @@ services:
     volumes:
       - .:/var/www
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
     networks:
       - laravel
 
-  db:
-    image: mysql:8.0
-    container_name: laravel_db
+  mysql:
+    image: mysql:8
+    container_name: laravel_mysql
     restart: always
     environment:
       MYSQL_DATABASE: laravel
-      MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: laravel
-      MYSQL_PASSWORD: laravel
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: root
     ports:
       - "3306:3306"
     volumes:
-      - db_data:/var/lib/mysql
+      - dbdata:/var/lib/mysql
     networks:
       - laravel
 
@@ -42,4 +43,4 @@ networks:
   laravel:
 
 volumes:
-  db_data:
+  dbdata:

@@ -19,7 +19,7 @@ jobs:
       run: |
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     - name: Build the Docker image
-      run: docker build -t testing-aws .
+      run: docker build -t ichsan060501/testing-aws:latest .
     - name: Push the Docker image
       run: |
-        docker push Ichsan-06/testing-aws
+        docker push ichsan060501/testing-aws:latest

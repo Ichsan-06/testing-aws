@@ -104,5 +104,5 @@ Route::get('/', function () {
 
 // Get stesting
 Route::get('/testing', function () {
-    return 'Hello s';
+    return 'Hello s 22';
 });

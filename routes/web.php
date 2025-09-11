@@ -100,3 +100,9 @@ Route::get('/', function () {
         throw $th;
     }
 });
+
+
+// Get stesting
+Route::get('/testing', function () {
+    return 'Hello World';
+});

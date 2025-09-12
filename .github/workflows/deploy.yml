@@ -20,8 +20,8 @@ jobs:
 
     - name: Build & Push Docker image
       run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/testing-aws:latest .
-        docker push ${{ secrets.DOCKER_USERNAME }}/testing-aws:latest
+        docker build -t ichsan060501/testing-aws .
+        docker push ichsan060501/testing-aws
 
     - name: Deploy to AWS EC2
       uses: appleboy/ssh-action@v0.1.10
@@ -32,7 +32,7 @@ jobs:
         script: |
           cd ~/laravel-docker
           git pull origin main || true
-          docker pull ${{ secrets.DOCKER_USERNAME }}/testing-aws:latest
+          docker pull ichsan060501/testing-aws
           docker-compose down
           docker-compose up -d --build
           docker system prune -af

@@ -18,4 +18,4 @@ jobs:
     - name: Delete old container
       run: docker rm -f testing-aws || true
     - name: Run Docker Container
-      run: docker run -d -p 80:80 --name testing-aws ichsan060501/testing-aws:latest
+      run: docker run -d -p 9000:80 --name testing-aws ichsan060501/testing-aws:latest

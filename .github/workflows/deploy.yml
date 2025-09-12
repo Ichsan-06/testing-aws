@@ -30,9 +30,8 @@ jobs:
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          cd ~/laravel-docker
-          git pull origin main || true
-          docker pull ichsan060501/testing-aws
-          docker-compose down
-          docker-compose up -d --build
-          docker system prune -af
+          docker pull ichsan060501/testing-aws:latest
+          docker stop testing-aws || true
+          docker rm testing-aws || true
+          docker run -d --name testing-aws -p 80:9000 ichsan060501/testing-aws:latest
+

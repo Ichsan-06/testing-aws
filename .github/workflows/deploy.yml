@@ -20,7 +20,7 @@ jobs:
 
     - name: Build & Push Docker image
       run: |
-        docker build -t ichsan060501/testing-aws .
+        docker build -t ichsan060501/testing-aws:latest .
         docker push ichsan060501/testing-aws:latest
 
     - name: Deploy to AWS EC2

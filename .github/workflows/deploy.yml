@@ -35,5 +35,5 @@ jobs:
           docker-compose down
           docker-compose pull
           docker rm -f laravel_app laravel_mysql laravel_nginx
-          docker-compose up -d --force-recreate
+          docker compose up -d --force-recreate
 

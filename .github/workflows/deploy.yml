@@ -31,9 +31,9 @@ jobs:
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
           cd /home/ubuntu/testing-aws
-          git pull origin main   # sync docker-compose.yml terbaru
-          docker-compose down
-          docker-compose pull
+          git pull origin main
+          docker compose down
+          docker compose pull
           docker rm -f laravel_app laravel_mysql laravel_nginx
           docker compose up -d --force-recreate
 

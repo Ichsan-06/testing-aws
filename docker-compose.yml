@@ -1,12 +1,11 @@
 version: "3.8"
 services:
   app:
-    build: .
+    image: ichsan060501/testing-aws:latest
     container_name: laravel_app
-    restart: always
+    estart: always
     volumes:
-      - .:/var/www
-      - /var/www/vendor   # biar vendor tetap dari hasil build image
+      - /var/www/vendor # kalau perlu biar vendor tetap dari build
     networks:
       - laravel
 
@@ -42,6 +41,7 @@ services:
 
 networks:
   laravel:
+
 
 volumes:
   dbdata:

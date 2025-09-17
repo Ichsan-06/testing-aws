@@ -3,7 +3,7 @@ services:
   app:
     image: ichsan060501/testing-aws:latest
     container_name: laravel_app
-    estart: always
+    restart: always
     volumes:
       - /var/www/vendor # kalau perlu biar vendor tetap dari build
     networks:

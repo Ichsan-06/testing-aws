@@ -5,7 +5,9 @@ services:
     container_name: laravel_app
     restart: always
     volumes:
-      - /var/www/vendor # kalau perlu biar vendor tetap dari build
+      - .:/var/www
+      - /var/www/vendor
+      - ./.env:/var/www/.env
     networks:
       - laravel
 
